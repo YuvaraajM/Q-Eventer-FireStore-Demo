@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-firestore.js"></script>
+    <title>Demo-FireStore</title>
+</head>
+
+<body>
+    <h1>Add,View and Delete Users</h1>
+    <form id="addUser">
+        Name:<input type="text" name="name" placeholder="Name" id="name"><br>
+        Email:<input type="email" name="email" placeholder="Email" id="email"><br>
+        <button id="btn" type="submit">Add User</button>
+    </form>
+    <h3>Search for Users</h3>
+    <form id="searchUser">
+        <input type="text" name="user" id="user" placeholder="Enter Username">
+        <button id="button">Submit</button>
+    </form>
+    <h3>The registered User's are:</h3>
+
+    <ol id="displayUser"></ol>
+    <h4>Reload the page to see the new Users</h4>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAt5-3nTFsTNF8rv5EsZkuAYXcButgXjkQ",
+            authDomain: "firestore-demo-6f532.firebaseapp.com",
+            databaseURL: "https://firestore-demo-6f532.firebaseio.com",
+            projectId: "firestore-demo-6f532",
+            storageBucket: "firestore-demo-6f532.appspot.com",
+            messagingSenderId: "248530152324",
+            appId: "1:248530152324:web:d26cb6054dbf5985da0bd1",
+            measurementId: "G-JTYETSE6PT"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        var db = firebase.firestore();
+        db.settings({ timestampsInSnapshots: true });
+    </script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
